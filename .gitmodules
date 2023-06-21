@@ -1,0 +1,9 @@
+[submodule "ForFun_NamingServer"]
+	path = ForFun_NamingServer
+	url = https://github.com/lebronjamesuit/ForFun_NamingServer.git
+[submodule "ForFun_CurrencyConversionMicroservice"]
+	path = ForFun_CurrencyConversionMicroservice
+	url = https://github.com/lebronjamesuit/ForFun_CurrencyConversionMicroservice.git
+[submodule "ForFun_API-Gateway"]
+	path = ForFun_API-Gateway
+	url = https://github.com/lebronjamesuit/ForFun_API-Gateway.git
