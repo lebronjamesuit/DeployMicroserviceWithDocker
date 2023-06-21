@@ -7,3 +7,6 @@
 [submodule "ForFun_API-Gateway"]
 	path = ForFun_API-Gateway
 	url = https://github.com/lebronjamesuit/ForFun_API-Gateway.git
+[submodule "ForFun_CurrencyExchangeMicroService"]
+	path = ForFun_CurrencyExchangeMicroService
+	url = https://github.com/lebronjamesuit/ForFun_CurrencyExchangeMicroService.git
