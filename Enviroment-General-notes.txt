@@ -1,0 +1,35 @@
+Switching between JAVA versions
+
+Step 1
+brew install jenv
+brew install java
+brew tap AdoptOpenJDK/openjdk
+brew install --cask adoptopenjdk15
+brew install --cask adoptopenjdk17
+brew install --cask adoptopenjdk12
+
+Step 2
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+Step 3
+$ jenv add /Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home/
+$ jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home/
+$ jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+
+Step 4: use
+ jenv versions
+ jenv global <java_version>
+
+
+Open folder:
+/Library/Java/JavaVirtualMachines
+
+user Folder:
+/usr/local/opt/openjdk@17/ .....
+
+Other way to switch
+https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
+
+
+
