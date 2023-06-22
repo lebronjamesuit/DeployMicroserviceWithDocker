@@ -22,6 +22,7 @@ services:
   environment:
     EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
     EUREKA.INSTANCE.PREFERIPADDRESS: true
+    MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
  
  currency-conversion-tengicungduoc:
   image: jamesvo/mss-currency-conversion:0.0.1-SNAPSHOT
@@ -35,6 +36,7 @@ services:
   environment:
     EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
     EUREKA.INSTANCE.PREFERIPADDRESS: true
+    MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
  api-gateway:
   image: jamesvo/mss-api-gateway:0.0.1-SNAPSHOT
@@ -47,6 +49,16 @@ services:
     - naming-service
   environment:
     EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
+    MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+
+ zipkin-server:
+  image: openzipkin/zipkin:2.23
+  mem_limit: 300m
+  ports:
+    - "9411:9411"
+  networks:
+   - currency-network
+  restart: always #Restart if there is a problem starting up
 
 networks:
  currency-network:    
