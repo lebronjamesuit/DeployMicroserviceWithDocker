@@ -1,13 +1,28 @@
 version: '3.7'
 
 services:
+
+ naming-service:
+  image: jamesvo/mss-naming-server:0.0.1-SNAPSHOT
+  mem_limit: 700m
+  ports:
+    - "8761:8761"
+  networks:
+    - currency-network
+
  currency-exchange:
-  image: jamesvo/mss-currency-exchang-microservice:0.0.1-SNAPSHOT
+  image: jamesvo/mss-currency-exchange:0.0.1-SNAPSHOT
   mem_limit: 700m
   ports:
     - "8000:8000"
   networks:
     - currency-network
+  depends_on:
+    - naming-service
+  environment:
+    EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
+    #eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+ 
 
 networks:
  currency-network:    
