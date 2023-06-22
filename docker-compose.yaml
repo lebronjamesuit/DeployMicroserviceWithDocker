@@ -21,8 +21,32 @@ services:
     - naming-service
   environment:
     EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
-    #eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+    EUREKA.INSTANCE.PREFERIPADDRESS: true
  
+ currency-conversion-tengicungduoc:
+  image: jamesvo/mss-currency-conversion:0.0.1-SNAPSHOT
+  mem_limit: 700m
+  ports:
+    - "8100:8100"
+  networks:
+    - currency-network
+  depends_on:
+    - naming-service
+  environment:
+    EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
+    EUREKA.INSTANCE.PREFERIPADDRESS: true
+
+ api-gateway:
+  image: jamesvo/mss-api-gateway:0.0.1-SNAPSHOT
+  mem_limit: 700m
+  ports:
+    - "8765:8765"
+  networks:
+    - currency-network
+  depends_on:
+    - naming-service
+  environment:
+    EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-service:8761/eureka
 
 networks:
  currency-network:    
