@@ -1,10 +1,16 @@
-# DeployMicroserviceWithDocker
+# DeployMicroserviceWithDocker: "Docker Compose +  microservices"
 
-Give that you alreay have docker in your PC. You have already started docker desktop is running
+![architecture docker](https://github.com/lebronjamesuit/DeployMicroserviceWithDocker/assets/11584601/11ccf3a1-70b3-43da-b581-0db365cc86aa)
 
+Give that you alreay have Docker install in your PC. If you use MAC, then docker compose plugin had already installed all together with Docker. 
 
-# Step 1: create config
+Using Docker Compose V2 
+# Step 1: create config is the more important step in this project.
 create docker-compose.yaml
+
+- Define containers
+- Three services api-gateway, Exchange and Conversion will depends on Naming Server
+- Environment in Docker Registry.
 
 # Step 2: run
 docker-compose up
@@ -14,6 +20,7 @@ docker-compose up
 
 
 http://localhost:8765/feign/currency-conversion/from/USD/to/GBP/quanlity/10
+
 API-Gateway: localhost:8765
 
 ZipKin distribution trace 
