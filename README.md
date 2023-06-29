@@ -1,4 +1,4 @@
-# DeployMicroserviceWithDocker: "Docker Compose +  microservices"
+# Deploy "Docker Compose +  microservices"
 
 ![architecture docker](https://github.com/lebronjamesuit/DeployMicroserviceWithDocker/assets/11584601/11ccf3a1-70b3-43da-b581-0db365cc86aa)
 
