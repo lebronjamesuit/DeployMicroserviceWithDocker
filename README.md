@@ -26,7 +26,7 @@ API-Gateway: localhost:8765
 ZipKin distribution trace 
 http://localhost:9411/zipkin/
 
-<img width="1269" alt="Screenshot 2023-06-29 at 11 07 06" src="https://github.com/lebronjamesuit/DeployMicroserviceWithDocker/assets/11584601/06953ae1-25b0-40b2-897c-0eb3c6542ddd">
+<img width="1269" alt="zipkin" src="https://github.com/lebronjamesuit/DeployMicroserviceWithDocker/assets/11584601/bc745bb6-bcef-476e-9672-7829838600ed">
 
 
 
